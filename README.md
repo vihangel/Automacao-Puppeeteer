@@ -1,2 +1,3 @@
-# Automacao-Puppeeter
-Alumas funções de automações de tarefas chatas ;)
+# Automacao com Puppeeteer
+
+Algumas funções de automações de tarefas chatas ;)
