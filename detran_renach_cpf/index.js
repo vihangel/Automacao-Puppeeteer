@@ -5,8 +5,8 @@ const BASE_URL = `https://www.detran.mt.gov.br/`;
 
 // retorna um josn com os dados da pagina
 async function collectDataFromBrowser(
-  Renach = `646632256`,
-  cpf = `04157908163`
+  Renach = ``,
+  cpf = ``
 ) {
   console.log(`starting..`);
 
