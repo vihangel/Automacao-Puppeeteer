@@ -1,7 +1,7 @@
 ///import * as plugins from "website-scraper/plugins";
 
 import scrape from "website-scraper";
-import * as plugins from 'website-scraper/plugins';
+
 import { once } from "events";
 import puppeteer from "puppeteer";
 import PuppeteerPlugin from "website-scraper-puppeteer";
@@ -11,49 +11,7 @@ const BASE_URL = `https://psicologos.seguronanuvem.com.br/`;
 
 class MyPlugin {
   apply(registerAction) {
-    registerAction('beforeStart', async ({options, utils}) => {});
-		registerAction('afterFinish', async () => {});
-		registerAction('error', async ({error}) => {console.error(error)});
-		registerAction('beforeRequest', async ({resource, requestOptions}) => ({requestOptions}));
-		registerAction('afterResponse', ({response}) => {
-      if (response.statusCode === 404) {
-          return null;
-      } else {
-        // if you don't need metadata - you can just return Promise.resolve(response.body)
-        return {
-          body: response.body,
-          metadata: {
-            headers: response.headers,
-            someOtherData: [ 1, 2, 3 ]
-          }
-        }
-      }
-    });
-		registerAction('onResourceSaved', ({resource}) => console.log(`Resource ${resource.url} saved!`));
-    registerAction('onResourceError', ({resource, error}) => console.log(`Resource ${resource.url} has error ${error}`));
-		    registerAction("saveResource", async ({ resource }) => {
-      const filename = resource.getFilename();
-      const text = resource.getText();
-      console.log(text);
-      //  await saveAs(filename, text);
-     
-    });
-   
-    registerAction('generateFilename', ({resource}) => {
-      return {filename: crypto.randomBytes(20).toString('hex')};
-    });
-    registerAction('getReference', ({resource, parentResource, originalReference}) => {
-      if (!resource) {
-        return {reference: parentResource.url + originalReference}
-      }
-      return {reference: utils.getRelativePath(parentResource.filename, resource.filename)};
-    });
-	}
-    // registerAction("saveResource", async ({ resource }) => {
-    //   const filename = resource.getFilename();
-    //   const text = resource.getText();
-    //   await saveItSomewhere(filename, text);
-    // });
+  }
   }
 
 scrape({
