@@ -1,7 +1,8 @@
 {
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "puppeteer": "^13.0.1",
-    "website-scraper": "^4.2.3",
-    "website-scraper-puppeteer": "^0.1.5"
+    "website-scraper": "^5.0.0",
+    "website-scraper-puppeteer": "^1.0.0"
   }
 }
